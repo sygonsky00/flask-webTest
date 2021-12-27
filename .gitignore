@@ -2,3 +2,4 @@
 webTest.db
 *.pyc
 __pycache__
+logs

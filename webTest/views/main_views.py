@@ -1,4 +1,4 @@
-from flask import Blueprint, url_for
+from flask import Blueprint, url_for, current_app
 from werkzeug.utils import redirect
 
 bp = Blueprint('main', __name__, url_prefix='/')
@@ -11,5 +11,6 @@ def hello():
 
 @bp.route('/')
 def index():
+    current_app.logger.info("INFO 레벨로 출력")
     return redirect(url_for('question._list'))
 
